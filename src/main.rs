@@ -33,11 +33,13 @@ fn main() {
         let mut new_frogs : Vec<Frog> = Vec::new();
         for frog in &frogs {
             let child_frog = frog.bears_child_frog();
-            new_frogs.push(child_frog);
+            if child_frog.is_frog() {
+                new_frogs.push(child_frog);
+            }
         }
         frogs.append(&mut new_frogs);
         cnt += 1;
-        println!("Current number of frogs is: {}", frogs.len());
+        println!("Epochs: {:5}, Frogs: {:5}", cnt, frogs.len());
         if frogs.len() >= n_max_frogs{break;}
     }
     println!("The pond get fulfilled.");
