@@ -1,4 +1,4 @@
-// Proverb-Programming: "Frog bears Frogs"
+// Proverb-Programming: "A frog bears a frog"
 
 use std::io;
 
