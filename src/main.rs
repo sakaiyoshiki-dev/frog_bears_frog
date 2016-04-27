@@ -26,6 +26,7 @@ impl Frog {
         let pond_has_space: bool = !(pond.is_fulfilled());
         if pond_has_space {
             pond.accept(self);
+            //println!("{:?}",self.is_frog()); //ownership has moved
         }
         pond_has_space
     }
@@ -78,7 +79,7 @@ fn main() {
         for frog in & (the_pond.frogs_living_in) {
             let child_frog = frog.bears_child_frog();
             if child_frog.is_frog(){
-                new_children_frogs.push(child_frog)
+                new_children_frogs.push(child_frog);
             }
         }
         for frog in new_children_frogs{
